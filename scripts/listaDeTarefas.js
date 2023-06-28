@@ -18,6 +18,7 @@
 
 		novaTarefa.innerHTML = novaTarefaConteudo;
 		novaTarefa.appendChild(ConcluirBtn());
+		novaTarefa.appendChild(DeletarBtn());
 		listaTarefasUl.appendChild(novaTarefa);
 
 		novaTarefaInput.value = "";
@@ -34,5 +35,17 @@
 		});
 
 		return concluirBtn;
+	};
+
+	const DeletarBtn = () => {
+		const deletarBtn = document.createElement("button");
+		deletarBtn.innerText = "Deletar";
+
+		deletarBtn.addEventListener("click", (event) => {
+			const tarefaDeletada = event.currentTarget.parentElement;
+			tarefaDeletada.remove();
+		});
+
+		return deletarBtn;
 	};
 })();
